@@ -85,7 +85,12 @@ inspect = [
     "pretty-type-name",
     "bevy_infinite_grid",
     "bevy-inspector-egui",
-{%- endif -%}
+{%- endif %}
+]
+steam = [
+{%- if deploy_steam %}
+    "bevy-steamworks"
+{%- endif %}
 ]
 
 [target.'cfg(target_family = "pc")'.features]
