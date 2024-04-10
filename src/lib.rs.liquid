@@ -1,7 +1,7 @@
 use bevy::{log::LogPlugin, prelude::*, window::WindowMode};
 {%- if deploy_steam %}
 use bevy_steamworks::SteamworksPlugin;
-{%- endif -%}
+{%- endif %}
 
 {% if enable_inspector -%}
 #[cfg(feature = "inspect")]
