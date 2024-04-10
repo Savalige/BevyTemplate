@@ -87,11 +87,6 @@ inspect = [
     "bevy-inspector-egui",
 {%- endif -%}
 ]
-steam = [
-{%- if deploy_steam %}
-    "bevy-steamworks"
-{%- endif -%}
-}
 
 [target.'cfg(not(target_family = "wasm"))'.features]
 inspect = [
@@ -107,11 +102,6 @@ inspect = [
     "bevy-inspector-egui",
 {%- endif %}
 ]
-steam = [
-{%- if deploy_steam %}
-    "bevy-steamworks"
-{%- endif -%}
-}
 
 [dependencies]
 bevy.workspace = true
