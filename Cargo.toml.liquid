@@ -92,8 +92,8 @@ inspect = [
 steam = [
 {%- if deploy_steam %}
     "bevy-steamworks"
-{%- endif -%}
-}
+{%- endif %}
+]
 
 [target.'cfg(not(target_family = "wasm"))'.features]
 inspect = [
