@@ -74,11 +74,7 @@ bevy = { version = "0.11", default-features = false, features = [
 ] }
 
 [features]
-default = [
-{%- if deploy_steam %}
-    "bevy-steamworks"
-{%- endif -%}
-]
+default = []
 inspect = [
 {%- if enable_inspector %}
     "bevy_egui",
@@ -91,6 +87,11 @@ inspect = [
     "bevy-inspector-egui",
 {%- endif -%}
 ]
+steam = [
+{%- if deploy_steam %}
+    "bevy-steamworks"
+{%- endif -%}
+}
 
 [target.'cfg(not(target_family = "wasm"))'.features]
 inspect = [
@@ -106,6 +107,11 @@ inspect = [
     "bevy-inspector-egui",
 {%- endif %}
 ]
+steam = [
+{%- if deploy_steam %}
+    "bevy-steamworks"
+{%- endif -%}
+}
 
 [dependencies]
 bevy.workspace = true
