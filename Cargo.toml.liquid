@@ -87,6 +87,18 @@ inspect = [
     "bevy-inspector-egui",
 {%- endif -%}
 ]
+steam = [
+{%- if enable_inspector %}
+    "bevy-steamworks"
+{%- endif -%}
+]
+
+[target.'cfg(target_family = "pc")'.features]
+steam = [
+{%- if enable_inspector %}
+    "bevy-steamworks"
+{%- endif -%}
+]
 
 [target.'cfg(not(target_family = "wasm"))'.features]
 inspect = [
