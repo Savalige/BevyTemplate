@@ -1,6 +1,6 @@
 use bevy::{log::LogPlugin, prelude::*, window::WindowMode};
 {%- if deploy_steam %}
-#[cfg(feature = "inspect")]
+#[cfg(feature = "steam")]
 mod steam;
 {%- endif %}
 
