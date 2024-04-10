@@ -1,6 +1,7 @@
 use bevy::{log::LogPlugin, prelude::*, window::WindowMode};
 {%- if deploy_steam %}
-use bevy_steamworks::SteamworksPlugin;
+#[cfg(feature = "inspect")]
+mod steam;
 {%- endif %}
 
 {% if enable_inspector -%}
@@ -45,7 +46,7 @@ pub fn app(fullscreen: bool) -> App {
     app.add_systems(Startup, setup);
 {%- endif %}
 {%- if deploy_steam %}
-    app.add_plugins(SteamworksPlugin::init_app({{steam_appid}}).unwrap());
+    app.add_plugins(steam::SteamPlugin);
 {%- endif -%}
     app
 }
