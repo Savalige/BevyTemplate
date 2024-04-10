@@ -46,6 +46,7 @@ pub fn app(fullscreen: bool) -> App {
     app.add_systems(Startup, setup);
 {%- endif %}
 {%- if deploy_steam %}
+    #[cfg(feature = "steam")]
     app.add_plugins(steam::SteamPlugin);
 {%- endif %}
     app
